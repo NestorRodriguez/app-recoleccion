@@ -1,0 +1,27 @@
+{
+  "name": "total-clean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon ./index.js",
+    "test": "test"
+  },
+  "author": "Jaime Castrillón Velásquez",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "log4js": "^5.3.0",
+    "moment": "^2.24.0",
+    "mysql2": "^2.0.0",
+    "sequelize": "^5.21.1",
+    "simple-encryptor": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}

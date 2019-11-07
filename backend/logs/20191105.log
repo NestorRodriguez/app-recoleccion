@@ -1,0 +1,1 @@
+[2019-11-05T23:28:36.413] [ERROR] trappsporte - [action: validation][msg: nombre es requerido, correo electrónico es requerido, usuario es requerido, contraseña es requerida, perfil de usuario es requerido][line:17:C:\Development\gaz\backend\app\utils\validator.js]
