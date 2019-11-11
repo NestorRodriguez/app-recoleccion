@@ -11,26 +11,26 @@
 
 <ion-content padding>
     <ion-toolbar >
-  <ion-title >Iniciar sesión</ion-title>
+  <ion-title  text-center>Iniciar sesión</ion-title>
     </ion-toolbar>
 <br>
 <br>
 <br>
   <ion-toolbar >
 <ion-item>
-  <ion-label position="floating">Usuario</ion-label>
-  <ion-input></ion-input>
+  <ion-label  position="floating">Usuario</ion-label>
+  <ion-input type="text" name="email"></ion-input>
 </ion-item>
 <p></p>
 <p></p>
-<ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input></ion-input>
+<ion-item >
+    <ion-label  position="floating">Contraseña</ion-label>
+    <ion-input type="password" name="password"></ion-input>
   </ion-item>
 </ion-toolbar>
 
 <ion-toolbar class="inicio">
-<button>Iniciar</button>
+<button (click)="onSubmitHome()">Iniciar</button>
 </ion-toolbar>
 
 </ion-content>

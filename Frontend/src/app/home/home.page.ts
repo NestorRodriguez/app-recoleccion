@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../servicios/auth.service";
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage  {
 
-  constructor() {}
+  constructor(private authservice: AuthService) {}
+
+  ngOninit(){
+  }
+
+  onSubmitHome()
+
+  {
+    console.log('estas en la funcion')
+  }
 
 }
