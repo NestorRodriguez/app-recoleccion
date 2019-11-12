@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../servicios/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,21 @@ import {AuthService} from "../servicios/auth.service";
 })
 export class HomePage  {
 
-  constructor(private authservice: AuthService) {}
+  email: string;
+  password: string;
+
+  constructor(private authservice: AuthService, public router: Router) {}
 
   ngOninit(){
   }
 
   onSubmitHome()
 
+
   {
-    console.log('estas en la funcion')
+    this.authservice.login(this.email, this.password).then(res =>{
+this.router.navigate(['/opcionusuario']);
+    }).catch(err => alert('Los datos no exixten o son incorrectos'))
   }
 
 }
