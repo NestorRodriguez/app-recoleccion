@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/auth"
-import { resolve } from 'path';
-import { reject } from 'q';
+import { promise } from 'protractor';
+import { Router } from "@angular/router";
+import { AngularFirestore } from "@angular/fire/firestore";
 
 
 @Injectable({
