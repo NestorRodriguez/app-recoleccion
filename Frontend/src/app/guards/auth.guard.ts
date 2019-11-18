@@ -6,7 +6,10 @@ import {AngularFireAuth} from "@angular/fire/auth";
 import { auth } from 'firebase';
 import {map} from "rxjs/operators";
 import { isNullOrUndefined } from 'util';
-import{router} from "@angular/router";
+
+import { Router } from "@angular/router";
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +24,7 @@ constructor(private AFauth : AngularFireAuth,
 
 return this.AFauth.authState.pipe(map(auth =>{
   if(isNullOrUndefined(auth)){
-    this,router.navigate(['/home'])
+    this.router.navigate(['/home'])
   return false;
 }else{
 return true
