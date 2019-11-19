@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import { AuthService } from '../servicios/auth.service';
+
 
 @Component({
   selector: 'app-opcionusuario',
   templateUrl: './opcionusuario.page.html',
   styleUrls: ['./opcionusuario.page.scss'],
+
 })
-export class OpcionusuarioPage implements OnInit {
+export class OpcionusuarioPage  {
+  constructor( public authService : AuthService){}
 
-  constructor() { }
 
-  ngOnInit() {
+Onlogout() {
+    this.authService.logout();
+
   }
 
 }

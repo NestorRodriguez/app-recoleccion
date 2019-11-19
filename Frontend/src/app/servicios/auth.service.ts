@@ -3,6 +3,7 @@ import {AngularFireAuth} from "@angular/fire/auth"
 import { promise } from 'protractor';
 import { Router } from "@angular/router";
 import { AngularFirestore } from "@angular/fire/firestore";
+import { auth } from 'firebase';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { AngularFirestore } from "@angular/fire/firestore";
 })
 export class AuthService {
 
-  constructor(private AFauth : AngularFireAuth) { }
+  constructor(private AFauth : AngularFireAuth, private router: Router) { }
 
   login(email:string, password:string) {
 
@@ -23,7 +24,10 @@ export class AuthService {
 
     }); 
 
- 
-
+  }
+  logout(){
+    this.AFauth.auth.signOut().then(() => {
+      this.router.navigate(['/home']);
+    }) 
   }
 }
