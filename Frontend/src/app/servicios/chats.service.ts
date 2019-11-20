@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
+import {AngularFirestore} from "@angular/fire/firestore"
 
 
-@Injectable({
+
+
+ @Injectable({
   providedIn: 'root'
 })
 export class ChatsService {
 
-  constructor() { }
+  constructor( private db : AngularFirestore) { }
+
+  getchatRooms(){
+    this.db.collection('chatsRooms').snapshotChanges()
+  }
 }
