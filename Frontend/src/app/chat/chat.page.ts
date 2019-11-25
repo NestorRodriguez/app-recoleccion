@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../servicios/auth.service';
-import { ChatsService } from '../servicios/chats.service';
+import { ChatsService, chat } from '../servicios/chats.service';
+import {ModalController} from "@ionic/angular"
+import {ChatsComponent} from "../componentes/chats/chats.component";
 
 @Component({
   selector: 'app-chat',
@@ -8,16 +10,27 @@ import { ChatsService } from '../servicios/chats.service';
   styleUrls: ['./chat.page.scss'],
 })
 export class ChatPage implements OnInit {
-  constructor(
-    public authservice: AuthService,
-    public chatservice: ChatsService
-  ) {}
+
+  public chatsRooms :any = [];
+
+  constructor(public authservice: AuthService, public chatservice: ChatsService,
+    private modal : ModalController) {}
 
   ngOnInit() {
     this.chatservice.getchatRooms().subscribe(chats => {
-      chats.map(chat => {
-        console.log(chat.payload.doc.data());
-      });
+     
+this.chatsRooms = chats;
+     
     })
+  }
+
+  openChat(chat){
+ 
+ this.modal.create({
+   component : ChatsComponent,
+   componentProps : {
+     name : chat.name
+   }
+ }).then( (modal) => modal.present())
   }
 }

@@ -15,12 +15,15 @@ import {AngularFireModule} from '@angular/fire';
 
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/firestore';
+import {ChatsComponent} from './componentes/chats/chats.component';
+import {FormsModule} from '@angular/forms';
+
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  declarations: [AppComponent, ChatsComponent],
+  entryComponents: [ChatsComponent],
+  imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
      AngularFireModule.initializeApp(firebaseConfig),
      AngularFireAuthModule, AngularFirestoreModule],
   providers: [
