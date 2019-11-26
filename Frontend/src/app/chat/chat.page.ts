@@ -29,7 +29,7 @@ this.chatsRooms = chats;
  this.modal.create({
    component : ChatsComponent,
    componentProps : {
-     name : chat.name
+    chat: chat
    }
  }).then( (modal) => modal.present())
   }
