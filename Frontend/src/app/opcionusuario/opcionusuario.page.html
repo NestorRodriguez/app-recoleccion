@@ -1,9 +1,14 @@
 <ion-header>
     <ion-toolbar color="primary">
 
-        <ion-icon name="menu"></ion-icon>
-        <ion-icon name="chatboxes"></ion-icon>
-
+        <ion-button slot="end" fill="clear">
+            <ion-icon style="color:#fff; font-size: 30px" name="chatboxes"></ion-icon> 
+        </ion-button>
+      
+        <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
+            <ion-icon style="color:#fff; font-size: 30px" name="menu" ></ion-icon>
+        </ion-button>
+           
     </ion-toolbar>
     <ion-toolbar class="header" color="secondary">
 
@@ -25,7 +30,7 @@
         <button>Recolección</button>
     </ion-toolbar>
 
-    <ion-button (click)="Onlogout()">Desconectarse</ion-button>
+    
 
 </ion-content>
 
