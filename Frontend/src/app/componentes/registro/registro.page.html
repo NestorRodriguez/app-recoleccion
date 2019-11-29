@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar  color="primary">
+ <ion-button routerLink="/opcionadmin" slot="start" fill="clear" (click)="closechat()">
+   <ion-icon style="color: #fff; font-size: 25px"  name="arrow-back"></ion-icon>
+ </ion-button>
+ <ion-title>Registrar recolector</ion-title>
+   </ion-toolbar>
+ 
+ <ion-toolbar class="header" color="secondary">
+ 
+ </ion-toolbar>
+ </ion-header>
+
+<ion-content padding>
+  <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <br>
+      <br>
+ 
+  <ion-toolbar>
+      <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="mane"  name="mane"></ion-input>
+      </ion-item>
+      <p></p>
+      <p></p>
+      <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="email"  name="email"></ion-input>
+      </ion-item>
+      <p></p>
+      <p></p>
+      <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+      <p></p>
+      <p></p>
+      
+  </ion-toolbar>
+
+  <ion-toolbar class="inicio">
+      <button (click)="OnSubmitRegister()">Guardar</button>
+  </ion-toolbar>
+
+
+</ion-content>
+
+
+<ion-footer color="primary">
+  <ion-toolbar color="primary">
+
+  </ion-toolbar>
+</ion-footer>

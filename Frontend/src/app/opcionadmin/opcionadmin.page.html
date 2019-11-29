@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar color="primary">
+
+        <ion-button routerLink="/chat" slot="end" fill="clear">
+            <ion-icon style="color:#fff; font-size: 30px" name="chatboxes"></ion-icon> 
+        </ion-button>
+      
+        <ion-button  slot="end" fill="clear" (click)="presentActionSheet()">
+            <ion-icon style="color:#fff; font-size: 30px" name="menu" ></ion-icon>
+        </ion-button>
+           
+    </ion-toolbar>
+    <ion-toolbar class="header" color="secondary">
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-toolbar>
+        <ion-title>Opciones</ion-title>
+    </ion-toolbar>
+    <br>
+    <br>
+
+    <ion-toolbar class="inicio">
+        <button>Ubicación recolector</button>
+    </ion-toolbar>
+
+    <ion-toolbar class="inicio">
+        <button routerLink="/registro">Agregar recolector</button>
+    </ion-toolbar>
+
+    
+
+</ion-content>
+
+
+<ion-footer color="primary">
+    <ion-toolbar color="primary">
+
+    </ion-toolbar>
+</ion-footer>

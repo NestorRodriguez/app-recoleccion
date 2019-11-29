@@ -10,6 +10,9 @@ const routes: Routes = [
   { path: 'opcionusuario', loadChildren: './opcionusuario/opcionusuario.module#OpcionusuarioPageModule', canActivate : [AuthGuard] },
   { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
   { path: 'mapas', loadChildren: './mapas/mapas.module#MapasPageModule' },
+  { path: 'registro', loadChildren: './componentes/registro/registro.module#RegistroPageModule'  },
+  { path: 'opcionadmin', loadChildren: './opcionadmin/opcionadmin.module#OpcionadminPageModule' },
+
 
 
 

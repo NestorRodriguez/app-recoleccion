@@ -4,6 +4,9 @@ import { promise } from 'protractor';
 import { Router } from "@angular/router";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { auth } from 'firebase';
+import { resolve } from 'dns';
+import { reject } from 'q';
+
 
 
 @Injectable({
@@ -11,7 +14,7 @@ import { auth } from 'firebase';
 })
 export class AuthService {
 
-  constructor(private AFauth : AngularFireAuth, private router: Router) { }
+  constructor(private AFauth : AngularFireAuth, private router: Router, private db : AngularFirestore) { }
 
   login(email:string, password:string) {
 
@@ -29,5 +32,21 @@ export class AuthService {
     this.AFauth.auth.signOut().then(() => {
       this.router.navigate(['/home']);
     }) 
+  }
+  register(email : string, password : string, name : string){
+    return new Promise ((resolve, reject) =>{
+      this.AFauth.auth.createUserWithEmailAndPassword(email, password).then(res =>{
+        //console.log(res.user.uid)
+const uid = res.user.uid;
+        this.db.collection('users').doc(uid).set({
+          name : name,
+          uid : uid
+        })
+
+resolve(res)
+      }).catch(err => reject(err))
+    })
+
+
   }
 }
