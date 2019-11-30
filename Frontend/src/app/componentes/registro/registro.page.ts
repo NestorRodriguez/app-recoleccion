@@ -21,7 +21,7 @@ export class RegistroPage implements OnInit {
 
 OnSubmitRegister(){
 this.auth.register(this.email, this.password, this.name).then( auth =>{
-  this.router.navigate(['opcionadmin'])
+  //this.router.navigate(['opcionadmin'])
   console.log(auth)
 }).catch(err => console.log(err))
 }

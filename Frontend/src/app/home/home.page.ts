@@ -23,7 +23,7 @@ export class HomePage  {
 
   {
     this.authservice.login(this.email, this.password).then(res =>{
-this.router.navigate(['/opcionusuario']);
+this.router.navigate(['/opcionadmin']);
     }).catch(err => alert('Los datos no exixten o son incorrectos'))
   }
 
