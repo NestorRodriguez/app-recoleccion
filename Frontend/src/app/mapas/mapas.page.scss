@@ -1,3 +1,30 @@
-.header{
-    height: 20px;
+agm-map {
+    height: 100%;
+  }
+
+  .welcome-card img {
+    max-height: 35vh;
+    overflow: hidden;
+}
+
+.menu {
+    height: 10%;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}
+
+.img {
+    height: 35px;
+    width: 35px;
+    margin-right: 5%
+}
+
+.imgfooter {
+    height: 35px;
+    width: 35px;
+    margin-right: 20px;
+    margin-left: 20px;
 }

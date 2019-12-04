@@ -1,24 +1,56 @@
-<ion-header >
-    <ion-toolbar   color="primary">
-      
-        
-        <ion-icon  style="font-size: 25px" name="arrow-back"></ion-icon>
-        
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-img class="img" src="./assets/perfil mujer.svg" slot="start"></ion-img>
+        <ion-title>
+            Parametrización
+        </ion-title>
+        <ion-img class="img" src="./assets/configuracion.svg" slot="end"></ion-img>
     </ion-toolbar>
-    <ion-toolbar class="header" color="secondary">
-      
+    <!-- <ion-toolbar color="secondary" class="menu"> -->
+    <span class="menu" color="secondary"></span>
+    <!-- </ion-toolbar> -->
+    <ion-toolbar class="title">
+        <ion-title color="primary">
+            Ubicación </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-title>Segumiento</ion-title>
-  
+  <div style="background-color: white; height: 90%;">
+    <!-- this creates a google map on the page with the given lat/lng from -->
+    <!-- the component as the initial center of the map: -->
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]='16'>
+      <agm-marker [latitude]="lat" [longitude]="lng" width="50%">
 
+      </agm-marker>
+
+    </agm-map>
+  </div>
+  <div style="background-color:white; position: fixed-bottom; height: 15%; text-align: center; padding-top: 1%; margin-bottom: 10%">
+  <section>
+    <ion-button (click)="EnviarCordenadas()" color="primary" size="block">Continuar</ion-button>
+  </section>
+  </div>
 </ion-content>
-<ion-footer >
-    <ion-toolbar color="primary" >
-      
-    </ion-toolbar>
-  </ion-footer>
 
+<ion-footer>
 
+  <ion-toolbar color="primary" class="title">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-img class="imgfooter" src="./assets/news.svg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img class="imgfooter" src="./assets/nueva incidencia.svg" [routerLink]="['/']"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img class="imgfooter" src="./assets/campana de notificacion.svg"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

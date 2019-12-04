@@ -3,6 +3,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import { promise } from 'protractor';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { catchError, tap, map } from 'rxjs/operators';
 
 
 
@@ -38,7 +39,7 @@ export class AuthService {
         const uid = res.user.uid;
         this.db.collection('users').doc(uid).set({
           name : name,
-          uid : uid,
+          uid : uid
        })
 
       resolve(res)
