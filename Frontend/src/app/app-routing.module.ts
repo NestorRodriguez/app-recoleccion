@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard} from "./guards/auth.guard";
+import { AuthGuard} from './guards/auth.guard';
 import { from } from 'rxjs';
-import { NologinGuard } from "./guards/nologin.guard";
+import { NologinGuard } from './guards/nologin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
