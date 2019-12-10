@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
   { path: 'mapas', loadChildren: './mapas/mapas.module#MapasPageModule' },
   { path: 'registro', loadChildren: './componentes/registro/registro.module#RegistroPageModule'  },
-  { path: 'opcionadmin', loadChildren: './opcionadmin/opcionadmin.module#OpcionadminPageModule' },
+  { path: 'opcionadmin', loadChildren: './opcionadmin/opcionadmin.module#OpcionadminPageModule' },  { path: 'mapas', loadChildren: './mapas/mapas.module#MapasPageModule' },
+
 
 
 

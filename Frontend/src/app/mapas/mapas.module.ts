@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { AgmCoreModule } from '@agm/core';
-
 
 import { IonicModule } from '@ionic/angular';
 
@@ -18,7 +16,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    AgmCoreModule,
     CommonModule,
     FormsModule,
     IonicModule,
@@ -26,4 +23,4 @@ const routes: Routes = [
   ],
   declarations: [MapasPage]
 })
-export class MapaPageModule {}
+export class MapasPageModule {}
