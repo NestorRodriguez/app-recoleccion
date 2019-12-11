@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import {map} from "rxjs/operators";
+import * as firebase from 'firebase';
+import {map} from 'rxjs/operators';
 import { message } from '../models/message';
-import { firestore } from 'firebase';
+import { firestore, auth } from 'firebase';
+import {AuthService} from '../servicios/auth.service';
+
 
 export interface chat {
-  descritcion : string
-  name : string
-  id : string
+  descritcion: string
+  name: string
+  id: string
   img : string
 }
 
@@ -16,7 +19,7 @@ export interface chat {
   providedIn: 'root'
 })
 export class ChatsService {
-  constructor(private db: AngularFirestore) {}
+  constructor(private db: AngularFirestore, private AuthService: AuthService) {}
 
   getchatRooms() {
     return this.db.collection('chatsRooms').snapshotChanges().pipe(map(rooms => {
